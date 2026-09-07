@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amplifire</title>
+    <link rel="stylesheet" href="amplifire.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Emblema+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Righteous&display=swap"
+        rel="stylesheet">
+</head>
+
+<body onload="artist()">
+    <div id="main">
+        <!-- App logo and name -->
+        <div class="logo">
+            <img src="image/logo.png" alt="Amplifire Logo">
+            <a href="mainpage.html">
+                <h1>Amplifire</h1>
+            </a>
+        </div>
+        <input type="search" id="search" placeholder="Search songs">
+    </div>
+
+    <div id="artist-hero">
+        <img id="art-img" src="">
+        <div>
+            <div id="art-name"></div>
+            <div id="follower-count"></div>
+        </div>
+        <div id="about-artist">
+            <h2>About</h2>
+            <div id="about"></div>
+        </div>
+    </div>
+
+    <div id="album-container">
+        <h2>Albums</h2>
+        <div id="art-albums"></div>
+    </div>
+
+    <div id="popular-container">
+        <h2>Top 10 Songs</h2>
+        <div id="art-songs"></div>
+    </div>
+
+    <div id="similar-artist">
+        <h2>Similar artists</h2>
+        <div id="similar"></div>
+    </div>
+
+    <footer>
+        <div class="footer">
+            <div class="footer-logo">
+                <img src="image/logowhite.png" alt="Amplifire Logo">
+                <h2>AMPLIFIRE</h2>
+            </div>
+
+            <p class="footer-tagline">
+                Where every beat finds a home.
+            </p> 
+
+            <div class="footer-socials">
+                <a href="https://www.instagram.com/amplifire_x/" target="_blank">
+                    Instagram
+                </a>
+
+                <a href="https://www.facebook.com/amplifirex/" target="_blank">
+                    Facebook
+                </a>
+
+                <a href="https://x.com/amplifire_x" target="_blank">
+                    X
+                </a>
+
+            </div>
+
+            <div class="footer-line"></div>
+
+            <p class="copyright">
+                © 2026 Amplifire. All Rights Reserved.
+            </p>
+        </div>
+    </footer>
+    <script src="amplifire.js"></script>
+</body>
+
+</html>

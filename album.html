@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amplifire – Album</title>
+    <link rel="stylesheet" href="amplifire.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Emblema+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Righteous&display=swap"
+        rel="stylesheet">
+    <style>
+        /* ── Album hero ── */
+        #album-hero {
+            display: flex;
+            gap: 35px;
+            align-items: flex-end;
+            padding: 30px 60px 25px;
+            /* background: linear-gradient(to bottom, #d4eff2 0%, #FFF8E8 100%); */
+        }
+
+        #album-cover {
+            width: 220px;
+            height: 220px;
+            border-radius: 15px;
+            object-fit: cover;
+            box-shadow: 0 10px 35px rgba(0,0,0,0.22);
+            flex-shrink: 0;
+        }
+
+        #album-meta {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        #album-type {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #2b7f89;
+            font-weight: 600;
+        }
+
+        #album-title {
+            font-family: "Righteous", sans-serif;
+            font-size: 48px;
+            font-weight: 400;
+            line-height: 1.1;
+            color: #3A2E2E;
+        }
+
+        #album-artist-name {
+            font-size: 18px;
+            font-weight: 600;
+            color: #2b7f89;
+        }
+
+        #album-info-row {
+            font-size: 14px;
+            color: #5a4e4e;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        #album-info-row span {
+            opacity: 0.5;
+        }
+
+        #album-artist-img {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+    </style>
+</head>
+
+<body onload="album()">
+    <!-- ── Navbar ── -->
+    <div id="main">
+        <div class="back">
+            <img src="image/back_btn.png" alt="Back">
+        </div>
+        <div class="logo">
+            <img src="image/logo.png" alt="Amplifire Logo">
+            <a href="mainpage.html"><h1>Amplifire</h1></a>
+        </div>
+        <input type="search" id="search" placeholder="Search songs">
+    </div>
+
+    <div id="album-hero">
+        <img id="album-cover" src="" alt="Album cover">
+        <div id="album-meta">
+            <div id="album-type">Album</div>
+            <div id="album-title"></div>
+            <div style="display:flex;align-items:center;gap:10px;margin-top:4px;">
+                <img id="album-artist-img" src="" alt="">
+                <div id="album-artist-name"></div>
+            </div>
+            <div id="album-info-row">
+                <span id="album-year"></span>
+                <span>·</span>
+                <span id="album-song-count"></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── Track list ── -->
+    <div id="tracklist-container">
+        <h2>Tracks</h2>
+        <div id="tracklist"></div>
+    </div>
+
+    <!-- ── Footer ── -->
+    <footer>
+        <div class="footer">
+            <div class="footer-logo">
+                <img src="image/logowhite.png" alt="Amplifire Logo">
+                <h2>AMPLIFIRE</h2>
+            </div>
+            <p class="footer-tagline">Where every beat finds a home.</p>
+            <div class="footer-socials">
+                <a href="https://www.instagram.com/amplifire_x/" target="_blank">Instagram</a>
+                <a href="https://www.facebook.com/amplifirex/" target="_blank">Facebook</a>
+                <a href="https://x.com/amplifire_x" target="_blank">X</a>
+            </div>
+            <div class="footer-line"></div>
+            <p class="copyright">© 2026 Amplifire. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="amplifire.js"></script>
+</body>
+</html>

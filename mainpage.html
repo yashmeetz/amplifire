@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Righteous&display=swap"
+        rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amplifire</title>
+
+    <style>
+        body {
+            background-color: #fff8e8;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            font-family: "Righteous", sans-serif;
+            font-size: 60px;
+        }
+
+        h2 {
+            font-family: "Poppins", sans-serif;
+        }
+
+        /* ==================== BANNER LAYOUT ==================== */
+        /* Two-column layout: main content + now-playing sidebar */
+        .banner {
+            display: flex;
+            justify-content: space-around;
+            gap: 20px;
+            flex-wrap: wrap;
+            padding: 0 20px;
+        }
+
+        /* Left column — takes up most of the width */
+        .content {
+            flex: 1;
+            min-width: 300px;
+            max-width: 800px;
+        }
+
+        /* ==================== FEATURED BANNER IMAGE ==================== */
+        .featured-banner img {
+            width: 100%;
+            max-width: 800px;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        .featured-banner {
+            padding: 20px 0px;
+            position: relative;
+        }
+
+        #listen_btn {
+            position: absolute;
+            bottom: 45px;
+            left: 40px;
+            background: #ffffff;
+            color: #1a1a1a;
+            border: none;
+            padding: 12px 32px;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, background 0.2s;
+        }
+
+        #listen_btn:hover {
+            background: #f9de99;
+            transform: scale(1.05);
+        }
+
+
+        /* ==================== TRENDING SONGS ==================== */
+
+        /* ==================== NOW PLAYING SIDEBAR ==================== */
+        .now-playing-container {
+            padding: 20px 10px 20px 20px;
+            background: #fff8e8;
+            border-radius: 15px;
+            font-family: "Poppins", sans-serif;
+            position: sticky;
+            align-self: flex-start;
+            top: 0;
+            max-height: 100vh;
+        }
+
+        /* Album art */
+        .track-art {
+            width: 100%;
+            max-width: 350px;
+            height: auto;
+            aspect-ratio: 1 / 1;
+            border-radius: 20px;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Track details */
+        .track-info {
+            margin-top: 16px;
+        }
+
+        .now-playing-label {
+            font-size: 0.8rem;
+            color: black;
+            margin: 0;
+            letter-spacing: 1px;
+        }
+
+        .track-name {
+            font-size: 1.2rem;
+            margin: 5px 0 2px;
+        }
+
+        .track-artist {
+            font-size: 1rem;
+            color: black;
+            margin: 0;
+        }
+
+        /* ==================== RESPONSIVE BREAKPOINTS ==================== */
+
+        /* Tablet: 768px and below  */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 40px;
+            }
+
+            .main {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            #search {
+                width: 100%;
+            }
+
+            .search-wrapper {
+                width: 100%;
+            }
+
+            .banner {
+                flex-direction: column;
+            }
+
+            .content {
+                max-width: 100%;
+            }
+
+            .featured-banner img {
+                height: 200px;
+            }
+
+            .scroll {
+                width: 100%;
+            }
+
+            .songs-container {
+                width: 100%;
+                padding: 15px;
+            }
+
+            /* Move now-playing to bottom on tablet */
+            .now-playing-container {
+                position: static;
+                width: 100%;
+            }
+
+            .track-art {
+                max-width: 100%;
+            }
+        }
+
+            /* Mobile: 480px and below */
+            @media (max-width: 480px) {
+                h1 {
+                    font-size: 28px;
+                }
+
+                .logo img {
+                    height: 80px;
+                }
+
+                .featured-banner img {
+                    height: 150px;
+                }
+
+                .artist-img {
+                    height: 100px;
+                    width: 100px;
+                }
+
+                .scroll {
+                    height: 130px;
+                }
+
+                #trending-section {
+                    font-size: 1.4rem;
+                }
+
+                .song-card {
+                    padding: 10px;
+                    gap: 10px;
+                }
+
+                .song-card img {
+                    width: 60px;
+                    height: 60px;
+                }
+            }
+    </style>
+
+    <link rel="stylesheet" href="amplifire.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <div id="main">
+        <div class="back">
+            <a href="index.html"><img src="image/home_btn.jpg"></a>
+        </div>
+        <div class="logo">
+            <img src="image/logo.png" alt="Amplifire Logo">
+            <a href="mainpage.html">
+                <h1>Amplifire</h1>
+            </a>
+        </div>
+        <input type="search" id="search" placeholder="Search songs">
+
+    </div>
+
+    <!-- ==================== MAIN CONTENT AREA ==================== -->
+    <div class="banner">
+
+        <!-- ---- LEFT COLUMN: featured image, artists, trending songs ---- -->
+        <div class="content">
+
+            <!-- Featured banner image -->
+            <div class="featured-banner">
+                <img src="image/Billie Eilish.png" alt="Featured Artist - billie">
+                <a href="album.html?id=28727994"><button id="listen_btn">Listen Now</button></a>
+            </div>
+
+            <!-- Horizontally scrollable featured artists section -->
+
+            <h2 id="featured-artists-label">Featured Artists</h2>
+            <div id="featured_artists">
+
+            </div>
+
+
+            <!-- Trending songs section -->
+            <h2 id="trending-section">Trending Songs</h2>
+            <div id="songs-container">
+            </div><!-- end .songs-container -->
+        </div><!-- end .content -->
+
+        <!-- ---- RIGHT COLUMN: Featured Albums ---- -->
+        <div class="featured-albums-container">
+            <h2 class="featured-albums-title">Featured Albums</h2>
+            <div class="albums-grid">
+            </div>
+        </div>
+
+    </div><!-- end .banner -->
+
+    <footer>
+        <div class="footer">
+            <div class="footer-logo">
+                <img src="image/logowhite.png" alt="Amplifire Logo">
+                <h2>AMPLIFIRE</h2>
+            </div>
+
+            <p class="footer-tagline">
+                Where every beat finds a home.
+            </p>
+
+            <div class="footer-socials">
+                <a href="https://www.instagram.com/amplifire_x/" target="_blank">
+                    Instagram
+                </a>
+
+                <a href="https://www.facebook.com/amplifirex/" target="_blank">
+                    Facebook
+                </a>
+
+                <a href="https://x.com/amplifire_x" target="_blank">
+                    X
+                </a>
+
+            </div>
+
+            <div class="footer-line"></div>
+
+            <p class="copyright">
+                © 2026 Amplifire. All Rights Reserved.
+            </p>
+        </div>
+    </footer>
+    <!-- ==================== EXTERNAL SCRIPT ==================== -->
+    <script src="amplifire.js"></script>
+
+</body>
+
+</html>
